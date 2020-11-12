@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const List = (props) => {
   return (
     <div>
-      list<span>aa</span>
+      list<span>a</span>
     </div>
   );
 };

@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Footer = (props) => {
   return (
-    <div>
-      Footer<span>aa</span>
+    <div className="footer">
+      <span className="lighter-gray">Dayenne Souza @DevChallenges.io</span>
     </div>
   );
 };

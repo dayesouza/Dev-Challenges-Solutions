@@ -1,14 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { ReactComponent as Logo } from "../assets/imgs/logo.svg";
+import SearchOption from "./SearchOption";
 
-const TopBar = (props) => {
+const TopBar = () => {
   return (
-    <div>
-      TopBar<span>aa</span>
+    <div className="topBar flex space-between">
+      <Logo />
+      <SearchOption location="Helsinki, Finland" />
     </div>
   );
 };
-
-TopBar.propTypes = {};
 
 export default TopBar;

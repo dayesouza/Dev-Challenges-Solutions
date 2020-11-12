@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import TopBar from "./components/TopBar";
 import Title from "./components/Title";
 import List from "./components/List";
