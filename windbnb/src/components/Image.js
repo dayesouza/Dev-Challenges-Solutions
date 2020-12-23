@@ -1,14 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Image = ({url}) => {
-  return (
-      <img className="stayPhoto" src={url} />
-  );
+const Image = ({ url }) => {
+  return <img alt="house photo" className="stayPhoto" src={url} />;
 };
 
 Image.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
 };
 
 export default Image;

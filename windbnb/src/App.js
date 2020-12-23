@@ -5,14 +5,14 @@ import Title from "./components/Title";
 import List from "./components/List";
 import Footer from "./components/Footer";
 
-let stays = require('./api/stays.json');
+let stays = require("./api/stays.json");
 function App() {
-  const [list, setList] = useState(stays);
+  const [list] = useState(stays);
   return (
     <div className="App">
       <TopBar />
-      <Title title="Stays in Finland" count={list.length}/>
-      <List list={list}/>
+      <Title title="Stays in Finland" count={list.length} />
+      <List list={list} />
       <Footer />
     </div>
   );
