@@ -6,8 +6,7 @@ const TopBar = () => {
   return (
     <div className="topBar flex space-between">
       <div>
-
-      <Logo />
+        <Logo />
       </div>
       <SearchOption location="Helsinki, Finland" />
     </div>
