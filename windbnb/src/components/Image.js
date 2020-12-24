@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Image = ({ url }) => {
-  return <img alt="house photo" className="stayPhoto" src={url} />;
+  return <img alt="house" className="stayPhoto" src={url} />;
 };
 
 Image.propTypes = {
