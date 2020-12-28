@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,10 +21,42 @@ body {
 .formInput {
   border: 1px solid black;
   border-radius: 16px;
-  display: inline;
+  display: inline-grid;
+  padding: 9px;
+  font-family: Mulish, sans-serif;
 
-  input {
-    border: unset;
+  span {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+
+  label {
+    font-size: 9px;
+    font-weight: 800;
+  }
+}
+
+.location {
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Mulish, sans-serif;
+  list-style-type: none;
+  padding-left: 20px;
+
+  li {
+    padding-top: 15px;
+    cursor: pointer;
+
+    svg {
+      margin-right: 7px;
+      font-size: 19px;
+    }
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 }
 
@@ -169,11 +201,9 @@ body {
 }
 
 .light-gray {
-  color: #bdbdbd;
+  color: $light-gray;
 }
 
 .lighter-gray {
   color: #a9a9a9;
 }
-
-/************** Mobile content *****************/

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import TopBar from "./components/TopBar";
 import Title from "./components/Title";
@@ -8,9 +8,26 @@ import Footer from "./components/Footer";
 let stays = require("./api/stays.json");
 function App() {
   const [list] = useState(stays);
+  const [locations, setLocations] = useState([]);
+
+  useEffect(() => {
+    var distinct = [];
+    stays.map((v) => {
+      const value = { country: v.country, city: v.city };
+      if (!distinct.find((x) => x.city == value.city)) {
+        distinct.push(value);
+      }
+    });
+    setLocations(distinct);
+  }, []);
+
+  const search = (filter) => {
+    console.log(filter);
+  };
+
   return (
     <div className="App">
-      <TopBar />
+      <TopBar search={search} locationOptions={locations} />
       <Title title="Stays in Finland" count={list.length} />
       <List list={list} />
       <Footer />
