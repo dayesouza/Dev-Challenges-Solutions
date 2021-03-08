@@ -7,14 +7,14 @@ import Footer from "./components/Footer";
 
 let stays = require("./api/stays.json");
 function App() {
-  const [list] = useState(stays);
+  const [list, setList] = useState(stays);
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
     var distinct = [];
     stays.map((v) => {
       const value = { country: v.country, city: v.city };
-      if (!distinct.find((x) => x.city == value.city)) {
+      if (!distinct.find((x) => x.city === value.city)) {
         distinct.push(value);
       }
     });
@@ -23,6 +23,10 @@ function App() {
 
   const search = (filter) => {
     console.log(filter);
+    const filtered = stays.filter(
+      (l) => l.city === filter.city && l.country === filter.country
+    );
+    setList(filtered);
   };
 
   return (

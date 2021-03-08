@@ -23,6 +23,7 @@ body {
   border-radius: 16px;
   display: inline-grid;
   padding: 9px;
+  width: 426px;
   font-family: Mulish, sans-serif;
 
   span {
@@ -114,11 +115,21 @@ body {
 
 .details__type {
   line-height: 28px;
+  color: $details-gray;
 }
 
 .rating,
 .details__type {
   line-height: 28px;
+}
+
+.rating {
+  color: $dark-gray;
+
+  i {
+    font-size: 15px;
+    vertical-align: text-top;
+  }
 }
 
 .superHost {
@@ -131,6 +142,7 @@ body {
   padding: 6px;
   margin-right: 9px;
   max-width: 80px;
+  display: inline-table;
 }
 
 .flex {
@@ -139,7 +151,7 @@ body {
     flex-direction: row;
   }
   &.column {
-    flex-direction: row;
+    flex-direction: column;
   }
   &.space-between {
     justify-content: space-between;
@@ -149,7 +161,8 @@ body {
 .stayPhoto {
   width: 100%;
   border-radius: 24px;
-  max-height: 300px;
+  max-height: 175px;
+  object-fit: cover;
 }
 
 .footer {
@@ -193,6 +206,28 @@ body {
 
   .topBar__border {
     border-left: 1px solid #f2f2f2;
+  }
+}
+
+.topBar__button {
+  border-radius: 16px;
+  background-color: $primary;
+  color: white;
+  padding: 15px 25px;
+  font-size: 14px;
+  font-family: "Mulish";
+  border: unset;
+  font-weight: 700;
+  cursor: pointer;
+
+  i {
+    margin-right: 10px;
+    font-size: 17px;
+    vertical-align: text-bottom;
+  }
+
+  &:hover {
+    background-color: $primary-dark;
   }
 }
 

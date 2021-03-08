@@ -17,29 +17,41 @@ const SearchOption = ({ location, locationOptions, search }) => {
 
   const onSearch = () => {
     setShowSearch(false);
-    search();
+    search(chosenLocation);
   };
 
   const changeLocation = (loc) => {
     setChosenLocation(loc);
   };
 
+  const LocationName = () => {
+    return (
+      <span>
+        {chosenLocation.city.length > 0
+          ? chosenLocation.city + ", "
+          : "Finland"}
+        {chosenLocation.country}
+      </span>
+    );
+  };
+
   return (
     <>
       <div className={classSearch}>
-        <div className="formInput">
-          <label>Location</label>
-          <span>
-            {chosenLocation.city}, {chosenLocation.country}
-          </span>
+        <div className="flex">
+          <div className="formInput">
+            <label>Location</label>
+            <LocationName />
+          </div>
+
+          <div className="topBar__border">
+            <button className="topBar__button" onClick={() => onSearch()}>
+              <i className="material-icons">search</i>
+              Search
+            </button>
+          </div>
         </div>
 
-        <div className="topBar__border">
-          <button onClick={() => onSearch()}>
-            <i className="material-icons primary">search</i>
-            Search
-          </button>
-        </div>
         <LocationList
           location={chosenLocation}
           setLocation={changeLocation}
@@ -48,9 +60,7 @@ const SearchOption = ({ location, locationOptions, search }) => {
       </div>
       <div className="topBar__search flex" onClick={() => changeSearch()}>
         <div>
-          <span>
-            {chosenLocation.city}, {chosenLocation.country}
-          </span>
+          <LocationName />
         </div>
         <div className="topBar__border">
           <span className="light-gray">Add guests</span>

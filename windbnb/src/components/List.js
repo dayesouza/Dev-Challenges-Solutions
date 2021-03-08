@@ -7,7 +7,7 @@ import SuperHost from "./SuperHost";
 
 const List = ({ list }) => {
   return (
-    <div class="grid">
+    <div className="grid">
       {list.map((stay) => {
         return (
           <div className="stay">
@@ -16,7 +16,7 @@ const List = ({ list }) => {
               <div className="flex">
                 {stay.superHost && <SuperHost></SuperHost>}
                 <span className="details__type">
-                  {stay.type} {stay.beds}
+                  {stay.type} {stay.beds > 0 && " . " + stay.beds + " beds"}
                 </span>
               </div>
               <Rating value={stay.rating} />

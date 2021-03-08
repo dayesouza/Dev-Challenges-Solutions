@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Title = ({title, count}) => {
+const Title = ({ title, count }) => {
   return (
-    <div className="flex column space-between">
+    <div className="flex space-between">
       <span className="title">{title}</span>
       <span className="subtitle">{count} stays</span>
     </div>
