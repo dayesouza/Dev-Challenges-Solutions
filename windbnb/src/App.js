@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     var distinct = [];
-    stays.map((v) => {
+    stays.forEach((v) => {
       const value = { country: v.country, city: v.city };
       if (!distinct.find((x) => x.city === value.city)) {
         distinct.push(value);
