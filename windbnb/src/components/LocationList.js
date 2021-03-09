@@ -7,7 +7,7 @@ const LocationList = ({ list, setLocation }) => {
       {list.map((c, index) => (
         <li key={index} onClick={() => setLocation(c)}>
           <span>
-            <i className="material-icons primary">place</i>
+            <i className="material-icons">place</i>
             {c.city}, {c.country}
           </span>
         </li>

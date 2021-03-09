@@ -8,34 +8,29 @@ import Footer from "./components/Footer";
 let stays = require("./api/stays.json");
 function App() {
   const [list, setList] = useState(stays);
-  const [locations, setLocations] = useState([]);
-
-  useEffect(() => {
-    var distinct = [];
-    stays.forEach((v) => {
-      const value = { country: v.country, city: v.city };
-      if (!distinct.find((x) => x.city === value.city)) {
-        distinct.push(value);
-      }
-    });
-    setLocations(distinct);
-  }, []);
+  const [cityFiltered, setCityFiltered] = useState("Finland");
 
   const search = (filter) => {
-    console.log(filter);
+    if (!filter.city.length) {
+      setList(stays);
+      return;
+    }
     const filtered = stays.filter(
       (l) => l.city === filter.city && l.country === filter.country
     );
     setList(filtered);
+    setCityFiltered(`${filter.city}, ${filter.country}`);
   };
 
   return (
-    <div className="App">
-      <TopBar search={search} locationOptions={locations} />
-      <Title title="Stays in Finland" count={list.length} />
-      <List list={list} />
-      <Footer />
-    </div>
+    <>
+      <TopBar search={search} />
+      <div className="app">
+        <Title title={`Stays in ${cityFiltered}`} count={list.length} />
+        <List list={list} />
+        <Footer />
+      </div>
+    </>
   );
 }
 

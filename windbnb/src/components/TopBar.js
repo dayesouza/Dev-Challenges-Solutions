@@ -5,7 +5,7 @@ import SearchOption from "./SearchOption";
 const TopBar = ({ locationOptions, search }) => {
   return (
     <div className="topBar flex space-between">
-      <div>
+      <div className="app">
         <Logo />
       </div>
       <SearchOption search={search} locationOptions={locationOptions} />

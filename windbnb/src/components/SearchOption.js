@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
-import LocationList from "./LocationList";
+import SearchWindow from "./SearchWindow";
 
-const SearchOption = ({ location, locationOptions, search }) => {
+const SearchOption = ({ location, search }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [chosenLocation, setChosenLocation] = useState(location);
   const changeSearch = () => {
     setShowSearch(true);
   };
-
-  const classSearch = classnames({
-    "d-none": !showSearch,
-    "topBar__search--open": showSearch,
-  });
 
   const onSearch = () => {
     setShowSearch(false);
@@ -37,27 +31,12 @@ const SearchOption = ({ location, locationOptions, search }) => {
 
   return (
     <>
-      <div className={classSearch}>
-        <div className="flex">
-          <div className="formInput">
-            <label>Location</label>
-            <LocationName />
-          </div>
-
-          <div className="topBar__border">
-            <button className="topBar__button" onClick={() => onSearch()}>
-              <i className="material-icons">search</i>
-              Search
-            </button>
-          </div>
-        </div>
-
-        <LocationList
-          location={chosenLocation}
-          setLocation={changeLocation}
-          list={locationOptions}
-        />
-      </div>
+      <SearchWindow
+        show={showSearch}
+        chosenLocation={chosenLocation}
+        changeLocation={changeLocation}
+        onSearch={onSearch}
+      />
       <div className="topBar__search flex" onClick={() => changeSearch()}>
         <div>
           <LocationName />
